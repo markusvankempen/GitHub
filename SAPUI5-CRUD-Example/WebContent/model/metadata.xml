@@ -31,7 +31,7 @@
 			</EntityType>
 			<EntityContainer Name="ZUSERINFO_SRV_Entities"
 				m:IsDefaultEntityContainer="true">
-				<EntitySet Name="ZUSERINFO_SRV" EntityType="ZUSERINFO_SRV.zuserinfo"
+				<EntitySet Name="zuserinfoSet" EntityType="ZUSERINFO_SRV.zuserinfo"
 					sap:pageable="false" sap:content-version="1" />
 			</EntityContainer>
 		</Schema>
