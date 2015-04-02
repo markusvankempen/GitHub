@@ -1,0 +1,99 @@
+<mvc:View
+  controllerName="sap.usrmgm.view.Detail"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form">
+  <Page title="Update User">
+    <l:Grid
+      defaultSpan="L12 M12 S12"
+      width="auto">
+      <l:content>
+        <f:SimpleForm
+          id="idDetailUserForm"
+          minWidth="800"
+          maxContainerCols="2"
+          editable="true"
+          layout="ResponsiveGridLayout"
+          title="Selected User"
+          labelSpanL="3"
+          labelSpanM="3"
+          emptySpanL="4"
+          emptySpanM="4"
+          columnsL="1"
+          columnsM="1"
+          class="editableForm">
+          <f:content>
+            <Label text="UUID" />
+            <Input value="{Uuid}" id="idUuid" />
+            <Label text="Email" />
+            <Input value="{Email}" id="idEmail" />
+            <Label text="First Name" />
+            <Input value="{Firstname}" id="idFirstname" />
+            <Label text="Last Name" />
+            <Input value="{Lastname}" id="idLastname" />
+            <Label text="Age" />
+            <Input value="{Age}" id="idAge" />
+            <Label text="Phone" />
+            <Input value="{Phone}" id="idPhone" />
+          </f:content>
+        </f:SimpleForm>
+        <IconTabBar>
+					<items>
+						<IconTabFilter
+							icon="sap-icon://supplier">
+							<f:SimpleForm
+								id="idProfileForm"
+								midWidth="800" >
+								<core:Title text="Profile" />
+								<Label text="User ID" />
+								<Text text="{Uuid}" />
+								<Label text="Email" />
+								<Text text="{Email}" />
+								<Label text="Full Name" />
+								<Text text="{Firstname} {Lastname}" />
+								<Label text="Age" />
+								<Text text="{Age}" />
+								<Label text="Phone" />
+								<Text text="{Phone}" />
+							</f:SimpleForm>
+						</IconTabFilter>
+					</items>
+        </IconTabBar>
+      </l:content>
+    </l:Grid>
+    <footer>
+      <Bar>
+        <contentLeft>
+          <Button
+            text="Call"
+            icon="sap-icon://outgoing-call"
+            press="onCall" />
+          <Button
+            text="Text"
+            icon="sap-icon://discussion"
+            press="onText" />
+          <Button
+            text="Call"
+            icon="sap-icon://email"
+            press="onEmail" />
+        </contentLeft>
+        <contentRight>
+          <Button 
+            text="Create"
+            type="Emphasized"
+            press="onAddUser" />
+          <Button 
+            text="Update"
+            type="Emphasized"
+            press="onUpdate" />
+          <Button
+            text="Delete"
+            type="Reject"
+            press="onDelete" />
+        </contentRight>
+      </Bar>
+    </footer>
+  </Page>
+</mvc:View>

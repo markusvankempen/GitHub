@@ -1,0 +1,26 @@
+ [    
+      {
+        "Uuid" : "001",
+        "Email" : "Markus@vankempen.org",
+        "Firstname" : "Markus",
+        "Lastname" : "van Kempen",
+        "Age" : 32,
+        "Phone" : 123
+      },
+      {
+        "Uuid" : "002",
+        "Email" : "foo.bar@example.com",
+        "Firstname" : "Foo",
+        "Lastname" : "Bar",
+        "Age" : 17,
+        "Phone" : 143
+      },
+      {
+        "Uuid" : "003",
+        "Email" : "will.smith@example.com",
+        "Firstname" : "Will",
+        "Lastname" : "Smith",
+        "Age" : 33,
+        "Phone" : 223
+      }
+]

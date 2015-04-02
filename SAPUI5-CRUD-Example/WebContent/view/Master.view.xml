@@ -1,0 +1,71 @@
+<mvc:View 
+  controllerName="sap.usrmgm.view.Master" displayBlock="true"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <Page id="page" title="Users">
+    <subHeader>
+      <Bar id="searchBar">
+        <contentMiddle>
+          <SearchField
+            id="searchField"
+            search="onSearch"
+            width="100%">
+          </SearchField>
+        </contentMiddle>
+      </Bar>
+    </subHeader>
+    <content>
+      <List 
+        id="list"
+        items="{/zuserinfoSet}"
+        mode="SingleSelectMaster"
+        growing="true"
+        growingThreshold="2"
+        select="onSelect">
+          <items>
+            <ObjectListItem
+              xmlns="sap.m"
+              title="{
+                  parts: [
+                     {path: 'Firstname'},
+                     {path: 'Lastname'}
+                  ],
+                  formatter: 'sap.usrmgm.util.Formatter.joinFullname'
+              }"
+              number="{
+                     path: 'Uuid',
+                     formatter: 'sap.usrmgm.util.Formatter.uuidPrettifier'
+              }"
+              icon="sap-icon://employee">
+            </ObjectListItem>
+          </items>
+      </List>
+    </content>
+    <footer>
+      <Bar>
+        <contentLeft>
+          <Select
+            id="groupSelect"
+            change="onGroup"
+            icon="sap-icon://group-2"
+            type="IconOnly"
+            selectedKey="None"
+            autoAdjustWidth="true" >
+            <core:Item 
+                   key="None"
+                   text="None" />
+            <core:Item 
+                   key="Age"
+                   text="Age" />
+          </Select>
+        </contentLeft>
+        <contentRight>
+          <Button
+            icon="sap-icon://add"
+            press="onAddUser" />
+        </contentRight>
+      </Bar>
+    </footer>
+  </Page>
+</mvc:View>
